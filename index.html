@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects in a School</title>
+    <!--link to javascript files-->
+    <script src="actions.js"></script>
+    <script src="objects.js"></script>
+    <script src="data.js"></script>
+    <!--link to css file-->
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body id="body" onload="buildSelectBoxes()">
+
+<h1>Get It Together!<small> School Management System</small></h1>
+
+<!--table with options to add a student/teacher/section and list the students/teachers/sections-->
+<table id="addOrListItems" border="1" cellspacing="2" cellpadding="10">
+    <tr id="studentRow">
+        <td id="studentRowTitle"><strong>Add a Student</strong></td>
+        <td>First Name: <input class="form-control input-sm" type="text" id="studentFirstName" value="" size="25"></td>
+        <td>Last Name: <input class="form-control input-sm" type="text" id="studentLastName" value="" size="25"></td>
+        <td>Grade: <select class="form-control input-sm" id="studentGrade">
+            <option value="9">9th</option>
+            <option value="10">10th</option>
+            <option value="11">11th</option>
+            <option value="12">12th</option>
+        </select></td>
+        <td><button class="btn btn-default active" id="addStudent" onclick="addStudent()">Add Student</button></td>
+    </tr>
+    <tr id="teacherRow">
+        <td><strong>Add a Teacher</strong></td>
+        <td>First Name: <input class="form-control input-sm" type="text" id="teacherFirstName" value="" size="25"></td>
+        <td>Last Name: <input class="form-control input-sm" type="text" id="teacherLastName" value="" size="25"></td>
+        <td>Subject: <input class="form-control input-sm" type="text" id="teacherSubject" value="" size="25"></td>
+        <td><button class="btn btn-default active" id="addTeacher" onclick="addTeacher()">Add Teacher</button></td>
+    </tr>
+    <tr id="sectionRow">
+        <td><strong>Add a Section</strong></td>
+        <td>Name: <input class="form-control input-sm" type="text" id="sectionName" value="" size="25"></td>
+        <td>Teacher: <input class="form-control input-sm" type="text" id="sectionTeacher" value="" size="25"></td>
+        <td>Maximum Size: <input class="form-control input-sm" type="text" id="maxSize" value="" size="25"></td>
+        <td><button class="btn btn-default active" id="addSection" onclick="addSection()">Add Section</button></td>
+    </tr>
+    <tr id="listingRow">
+        <td><strong>List Information</strong></td>
+        <td><button class="btn btn-default active" id="listStudents" onclick="listStudents()">List Students</button>
+            <div id="studentList"></div>
+        </td>
+        <td><button class="btn btn-default active" id="listTeachers" onclick="listTeachers()">List Teachers</button>
+            <div id="teacherList"></div>
+        </td>
+        <td><button class="btn btn-default active" id="listSections" onclick="listSections()">List Sections</button>
+            <div id="sectionList"></div>
+        </td>
+    </tr>
+    <tr id="StudentToSectionRow">
+        <td><strong>Add/Remove a Student To/From a Section</strong></td>
+        <td>Choose a Student: <select class="form-control input-sm" id="studentSelectBoxAdd"></select></td>
+        <td>Choose a Section: <select class="form-control input-sm" id="sectionSelectBoxAdd"></select></td>
+        <td>
+            <button class="btn btn-default active" id="addStudentToSection" onclick="addStudentToSection()">Add Student to Section</button>
+        </td>
+        <td>
+            <button class="btn btn-default active" id="removeStudentFromSection" onclick="removeStudentFromSection()">Remove Student from Section</button>
+        </td>
+    </tr>
+    <tr id="listStudentsInASectionRow">
+        <td><strong>List Students In a Section</strong></td>
+        <td>Choose a Section:
+            <select class="form-control input-sm" id="sectionSelectBoxList"></select>
+        </td>
+        <td><button class="btn btn-default active" id="listStudentsInSection" onclick="listStudentsInSection()">List Students in this Section</button>
+            <div id="studentsInTheSection"></div>
+        </td>
+        <td>Seats Remaining in Section:
+            <div id="sectionSeatsRemaining"></div>
+        </td>
+    </tr>
+</table>
+
+<div id="messageToUser"></div>
+
+
+</body>
+</html>

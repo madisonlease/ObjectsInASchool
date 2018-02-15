@@ -1,0 +1,19 @@
+#messageToUser {
+    background-color: yellow;
+}
+#body{
+    background-color: rgba(43, 80, 181, 0.22);
+}
+#addOrListItems{
+    border: 1px white solid;
+    width: 90%;
+    margin:auto;
+}
+
+#addOrListItems td {
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+}
